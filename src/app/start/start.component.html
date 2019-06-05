@@ -1,0 +1,22 @@
+<div class="wrapper">
+  <div class="bl">
+    <div class="bl-content">
+      <div class="time">
+        <h1>
+          {{hoursDisplay ? hoursDisplay : '00'}}
+          : {{(minutesDisplay) && (minutesDisplay <= 59) ? minutesDisplay : '00'}}
+          : {{(secondsDisplay) && (secondsDisplay <= 59) ? secondsDisplay : '00'}} <br/>
+        </h1>
+      </div>
+      <div class="bl-btn">
+        <button *ngIf="isButtonStartStop == true" class="btn" (click)="onClickStart()"><i class="fas fa-play"></i> Start
+        </button>
+        <button *ngIf="isButtonStartStop == false" class="btn" (click)="onClickStop()"><i class="fas fa-stop"></i> Stop
+        </button>
+        <button *ngIf="isButtonPause" class="btn" (click)="onClickWait()"><i class="fas fa-pause"></i> Pause</button>
+        <button *ngIf="isButtonPlay" class="btn" (click)="onClickWaitPlay()"><i class="fas fa-play"></i> Play</button>
+        <button class="btn" (click)="onClickReset()"><i class="fas fa-toilet-paper"></i> Reset</button>
+      </div>
+    </div>
+  </div>
+</div>
